@@ -1,0 +1,32 @@
+{
+  "name": "coursehub-server",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "start": "tsx src/server.ts",
+    "seed:admin": "node src/scripts/seed-admin.cjs",
+    "migrate:clerk": "tsx src/scripts/migrate-users-to-clerk.ts",
+    "seed:exams": "tsx src/scripts/seed-exams.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.901.0",
+    "@clerk/backend": "^3.23.1",
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^17.4.2",
+    "express": "^5.1.0",
+    "mongoose": "^9.10.4",
+    "next": "16.3.8",
+    "stripe": "^23.0.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.5",
+    "@types/node": "^20",
+    "tsx": "^4.20.5",
+    "typescript": "^5"
+  }
+}

@@ -1,0 +1,158 @@
+import type { RequestHandler } from "express";
+import * as route0 from "./routes/admin/advanced/route";
+import * as route1 from "./routes/admin/analytics/route";
+import * as route2 from "./routes/admin/coupons/route";
+import * as route3 from "./routes/admin/courses/[id]/route";
+import * as route4 from "./routes/admin/courses/route";
+import * as route5 from "./routes/admin/export/route";
+import * as route6 from "./routes/admin/lessons/[id]/route";
+import * as route7 from "./routes/admin/lessons/route";
+import * as route8 from "./routes/admin/payments/route";
+import * as route9 from "./routes/admin/premium/route";
+import * as route70 from "./routes/admin/hero-slides/route";
+import * as route10 from "./routes/admin/seo/route";
+import * as route11 from "./routes/admin/subscriptions/route";
+import * as route12 from "./routes/admin/users/route";
+import * as route13 from "./routes/assignments/route";
+import * as route14 from "./routes/assignments/submit/route";
+import * as route17 from "./routes/auth/me/route";
+import * as route20 from "./routes/auth/sessions/route";
+import * as route74 from "./routes/auth/sync/route";
+import * as route21 from "./routes/blog/route";
+import * as route22 from "./routes/certificates/route";
+import * as route23 from "./routes/community/groups/[id]/route";
+import * as route24 from "./routes/community/groups/route";
+import * as route25 from "./routes/community/meeting/route";
+import * as route26 from "./routes/community/messages/route";
+import * as route27 from "./routes/community/posts/[id]/route";
+import * as route28 from "./routes/community/posts/route";
+import * as route29 from "./routes/community/presence/route";
+import * as route30 from "./routes/community/profile/route";
+import * as route31 from "./routes/community/unread/route";
+import * as route32 from "./routes/community/upload/route";
+import * as route33 from "./routes/community/users/[id]/route";
+import * as route34 from "./routes/community/users/route";
+import * as route65 from "./routes/community/typing/route";
+import * as route66 from "./routes/community/direct-messages/route";
+import * as route35 from "./routes/coupons/validate/route";
+import * as route36 from "./routes/courses/[id]/access/route";
+import * as route37 from "./routes/courses/[id]/access/test/route";
+import * as route38 from "./routes/courses/[id]/comments/route";
+import * as route39 from "./routes/courses/[id]/lessons/route";
+import * as route40 from "./routes/courses/[id]/like/route";
+import * as route41 from "./routes/courses/[id]/rating/route";
+import * as route42 from "./routes/courses/[id]/route";
+import * as route43 from "./routes/courses/route";
+import * as route44 from "./routes/learning/bookmarks/route";
+import * as route45 from "./routes/learning/dashboard/route";
+import * as route46 from "./routes/learning/goals/route";
+import * as route47 from "./routes/learning/notes/route";
+import * as route48 from "./routes/learning/plans/route";
+import * as route49 from "./routes/learning/progress/route";
+import * as route50 from "./routes/media/[id]/route";
+import * as route51 from "./routes/notifications/route";
+import * as route52 from "./routes/payments/bank/route";
+import * as route53 from "./routes/payments/paypal/capture/route";
+import * as route54 from "./routes/payments/paypal/create/route";
+import * as route55 from "./routes/payments/stripe/checkout/route";
+import * as route56 from "./routes/payments/stripe/webhook/route";
+import * as route75 from "./routes/payments/stripe/status/route";
+import * as route57 from "./routes/premium/plans/route";
+import * as route58 from "./routes/quizzes/attempt/route";
+import * as route59 from "./routes/quizzes/route";
+import * as route60 from "./routes/search/route";
+import * as route61 from "./routes/subscriptions/manage/route";
+import * as route62 from "./routes/subscriptions/route";
+import * as route63 from "./routes/uploads/route";
+import * as route64 from "./routes/admin/search/route";
+import * as route67 from "./routes/admin/categories/route";
+import * as route68 from "./routes/support/route";
+import * as route69 from "./routes/community/admin/members/route";
+import * as route71 from "./routes/hero-slides/route";
+import * as route76 from "./routes/exams/subjects/route";
+import * as route77 from "./routes/exams/start/route";
+import * as route78 from "./routes/exams/[attemptId]/submit/route";
+import * as route79 from "./routes/exams/[attemptId]/route";
+import * as route80 from "./routes/exams/eligible-courses/route";
+import * as route81 from "./routes/admin/exams/route";
+import * as route82 from "./routes/admin/exams/questions/route";
+
+export const routeModules = [
+  { path: "/api/admin/advanced", module: route0 },
+  { path: "/api/admin/analytics", module: route1 },
+  { path: "/api/admin/coupons", module: route2 },
+  { path: "/api/admin/courses/:id", module: route3 },
+  { path: "/api/admin/courses", module: route4 },
+  { path: "/api/admin/export", module: route5 },
+  { path: "/api/admin/lessons/:id", module: route6 },
+  { path: "/api/admin/lessons", module: route7 },
+  { path: "/api/admin/payments", module: route8 },
+  { path: "/api/admin/premium", module: route9 },
+  { path: "/api/admin/hero-slides", module: route70 },
+  { path: "/api/admin/seo", module: route10 },
+  { path: "/api/admin/subscriptions", module: route11 },
+  { path: "/api/admin/users", module: route12 },
+  { path: "/api/assignments", module: route13 },
+  { path: "/api/assignments/submit", module: route14 },
+  { path: "/api/auth/me", module: route17 },
+  { path: "/api/auth/sync", module: route74 },
+  { path: "/api/auth/sessions", module: route20 },
+  { path: "/api/blog", module: route21 },
+  { path: "/api/certificates", module: route22 },
+  { path: "/api/community/groups/:id", module: route23 },
+  { path: "/api/community/groups", module: route24 },
+  { path: "/api/community/meeting", module: route25 },
+  { path: "/api/community/messages", module: route26 },
+  { path: "/api/community/posts/:id", module: route27 },
+  { path: "/api/community/posts", module: route28 },
+  { path: "/api/community/presence", module: route29 },
+  { path: "/api/community/profile", module: route30 },
+  { path: "/api/community/unread", module: route31 },
+  { path: "/api/community/upload", module: route32 },
+  { path: "/api/community/users/:id", module: route33 },
+  { path: "/api/community/users", module: route34 },
+  { path: "/api/community/typing", module: route65 },
+  { path: "/api/community/direct-messages", module: route66 },
+  { path: "/api/community/admin/members", module: route69 },
+  { path: "/api/coupons/validate", module: route35 },
+  { path: "/api/courses/:id/access", module: route36 },
+  { path: "/api/courses/:id/access/test", module: route37 },
+  { path: "/api/courses/:id/comments", module: route38 },
+  { path: "/api/courses/:id/lessons", module: route39 },
+  { path: "/api/courses/:id/like", module: route40 },
+  { path: "/api/courses/:id/rating", module: route41 },
+  { path: "/api/courses/:id", module: route42 },
+  { path: "/api/courses", module: route43 },
+  { path: "/api/learning/bookmarks", module: route44 },
+  { path: "/api/learning/dashboard", module: route45 },
+  { path: "/api/learning/goals", module: route46 },
+  { path: "/api/learning/notes", module: route47 },
+  { path: "/api/learning/plans", module: route48 },
+  { path: "/api/learning/progress", module: route49 },
+  { path: "/api/media/:id", module: route50 },
+  { path: "/api/notifications", module: route51 },
+  { path: "/api/payments/bank", module: route52 },
+  { path: "/api/payments/paypal/capture", module: route53 },
+  { path: "/api/payments/paypal/create", module: route54 },
+  { path: "/api/payments/stripe/checkout", module: route55 },
+  { path: "/api/payments/stripe/webhook", module: route56 },
+  { path: "/api/payments/stripe/status", module: route75 },
+  { path: "/api/premium/plans", module: route57 },
+  { path: "/api/quizzes/attempt", module: route58 },
+  { path: "/api/quizzes", module: route59 },
+  { path: "/api/search", module: route60 },
+  { path: "/api/subscriptions/manage", module: route61 },
+  { path: "/api/subscriptions", module: route62 },
+  { path: "/api/uploads", module: route63 },
+  { path: "/api/admin/search", module: route64 },
+  { path: "/api/admin/categories", module: route67 },
+  { path: "/api/support", module: route68 },
+  { path: "/api/hero-slides", module: route71 },
+  { path: "/api/exams/subjects", module: route76 },
+  { path: "/api/exams/start", module: route77 },
+  { path: "/api/exams/:attemptId/submit", module: route78 },
+  { path: "/api/exams/eligible-courses", module: route80 },
+  { path: "/api/exams/:attemptId", module: route79 },
+  { path: "/api/admin/exams", module: route81 },
+  { path: "/api/admin/exams/questions", module: route82 },
+];
